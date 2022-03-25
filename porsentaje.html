@@ -1,0 +1,33 @@
+<html>
+   <head>
+         <!--si la suma de 3 productos es mayor o igual a 5000 descuento del 15% -->
+      <title>Descuento</title>
+      <script>
+         function descuentodel(){
+            var a=parseInt(document.getElementById("producto1").value);
+            var b=parseInt(document.getElementById("producto2").value);
+            var c=parseInt(document.getElementById("producto3").value);
+            var sumatotal=a+b+c;
+            sumatotal=parseInt(sumatotal);
+            if(sumatotal>=5000){
+               sumatotal=sumatotal-(15/100)*sumatotal
+            }
+            document.descuento.total.value=sumatotal;
+         }
+      </script>
+   </head>
+   <body>
+      <h1>Descuento </h1>
+      <form name="descuento">
+         <label>Producto 1:</label>
+         <input type="text" size="20" id="producto1"/><br>
+         <label>Producto 2:</label>
+         <input type="text" size="20" id="producto2"/><br>
+         <label>Producto 3:</label>
+         <input type="text" size="20" id="producto3"/><br>
+         <input type="button" value="total" onclick="descuentodel()"><br>
+         <label>total a pagar</label>
+         <input type="text" id="total" size="20"/>
+      </form>
+   </body>
+</html>
